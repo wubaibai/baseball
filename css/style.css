@@ -1,0 +1,207 @@
+/* -- LESS PLUG IN
+----- 這些都可以當 function 來用。
+----------------------------------------*/
+/* -- Universal Setting & Reset CSS
+--------------------------------------------------*/
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple LiGothic", "微軟正黑體", "Microsoft JhengHei";
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #6c9e01;
+}
+a,
+a:active,
+a:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.4;
+}
+::selection {
+  background: transparent;
+}
+::-moz-selection {
+  background: transparent;
+}
+/* -- Align & Float
+----------------------------------------*/
+.center {
+  text-align: center;
+}
+.left {
+  text-align: left;
+}
+.right {
+  text-align: right;
+}
+.f-left {
+  float: left;
+}
+.f-right {
+  float: right;
+}
+.clear-both {
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  clear: both;
+}
+/* -- Layout 
+----------------------------------------*/
+.baseball-section {
+  background: url(../images/baseball-bg-repeat.jpg) repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.baseball-section .site-title {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  color: white;
+  padding-top: 30px;
+  text-align: center;
+}
+.baseball-section .site-title img {
+  width: 50%;
+}
+.baseball-section .court-wrapper {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+.baseball-section .court-wrapper .court-bg {
+  height: 75%;
+  margin-top: 20vh;
+}
+.baseball-section .court-wrapper .player-block {
+  position: absolute;
+  width: 200px;
+  height: 64px;
+  text-align: left;
+}
+.baseball-section .court-wrapper .player-block > div,
+.baseball-section .court-wrapper .player-block > img {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.baseball-section .court-wrapper .player-block .player-head {
+  width: 50px;
+  opacity: 0;
+  z-index: 2;
+}
+.baseball-section .court-wrapper .player-block .player-name {
+  opacity: 0;
+  color: black;
+  background-color: white;
+  margin-left: -50px;
+  z-index: 1;
+  padding: 3px 4px 3px 20px;
+  line-height: 1;
+  border: black 2px solid;
+  width: 175px;
+  text-align: left;
+  border-radius: 2px;
+  font-size: 20px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+.baseball-section .court-wrapper .player-C,
+.baseball-section .court-wrapper .player-P,
+.baseball-section .court-wrapper .player-CF {
+  left: 50vw;
+  margin-left: -100px;
+}
+.baseball-section .court-wrapper .player-LF,
+.baseball-section .court-wrapper .player-3B {
+  left: 42vw;
+  margin-left: -260px;
+}
+.baseball-section .court-wrapper .player-RF,
+.baseball-section .court-wrapper .player-1B {
+  right: 43vw;
+  margin-right: -260px;
+}
+.baseball-section .court-wrapper .player-LF,
+.baseball-section .court-wrapper .player-RF {
+  top: 22vh;
+}
+.baseball-section .court-wrapper .player-CF {
+  top: 18vh;
+}
+.baseball-section .court-wrapper .player-C {
+  bottom: 9vh;
+}
+.baseball-section .court-wrapper .player-1B,
+.baseball-section .court-wrapper .player-3B,
+.baseball-section .court-wrapper .player-P {
+  top: 58vh;
+  margin-top: -32px;
+}
+.baseball-section .court-wrapper .player-SS,
+.baseball-section .court-wrapper .player-2B {
+  top: 36vh;
+}
+.baseball-section .court-wrapper .player-SS {
+  left: 42vw;
+  margin-left: -130px;
+}
+.baseball-section .court-wrapper .player-2B {
+  right: 42vw;
+  margin-right: -130px;
+}
+.baseball-section .court-wrapper .player-block.show .player-number {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.baseball-section .court-wrapper .player-block.show .player-name {
+  opacity: 1;
+  margin-left: -30px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.baseball-section .court-wrapper .player-block.show .player-head {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+/* -- Responsive
+--------------------------------------------------*/
+/* Portrait tablet to landscape and desktop */
+@media all and (max-width: 980px) {
+  .center-content {
+    width: 96%;
+    padding: 2%;
+  }
+}
+/* Landscape phone to portrait tablet */
+@media all and (max-width: 720px) {
+  
+}
+/* Landscape phones and down */
+@media all and (max-width: 480px) {
+  
+}

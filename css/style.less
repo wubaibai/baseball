@@ -1,0 +1,349 @@
+/* -- LESS PLUG IN
+----- 這些都可以當 function 來用。
+----------------------------------------*/
+	.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+		text-shadow: @string;
+	}
+	.box-shadow (@string) {
+		-webkit-box-shadow: @string;
+		-moz-box-shadow:    @string;
+		box-shadow:         @string;
+	}
+	.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+		-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+		-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+		box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	}
+	.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+		-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+		-moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+		box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	}
+	.box-sizing (@type: border-box) {
+		-webkit-box-sizing: @type;
+		-moz-box-sizing:    @type;
+		box-sizing:         @type;
+	}
+	.border-radius (@radius: 5px) {
+		-webkit-border-radius: @radius;
+		-moz-border-radius:    @radius;
+		border-radius:         @radius;
+
+		-moz-background-clip:    padding;
+		-webkit-background-clip: padding-box;
+		background-clip:         padding-box;
+	}
+	.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+		-webkit-border-top-right-radius:    @topright;
+		-webkit-border-bottom-right-radius: @bottomright;
+		-webkit-border-bottom-left-radius:  @bottomleft;
+		-webkit-border-top-left-radius:     @topleft;
+
+		-moz-border-radius-topright:        @topright;
+		-moz-border-radius-bottomright:     @bottomright;
+		-moz-border-radius-bottomleft:      @bottomleft;
+		-moz-border-radius-topleft:         @topleft;
+
+		border-top-right-radius:            @topright;
+		border-bottom-right-radius:         @bottomright;
+		border-bottom-left-radius:          @bottomleft;
+		border-top-left-radius:             @topleft;
+
+		-moz-background-clip:    padding; 
+		-webkit-background-clip: padding-box; 
+		background-clip:         padding-box; 
+	}
+	.opacity (@opacity) {
+	    @opacityPercentage: @opacity * 100;
+	    opacity: @opacity;
+	    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=(@{opacityPercentage}))"; 
+	    filter: ~"alpha(opacity = (@{opacityPercentage}))";
+	}
+	.gradient (@startColor: #eee, @endColor: white) {
+		background-color: @startColor;
+		background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+		background: -webkit-linear-gradient(top, @startColor, @endColor);
+		background: -moz-linear-gradient(top, @startColor, @endColor);
+		background: -ms-linear-gradient(top, @startColor, @endColor);
+		background: -o-linear-gradient(top, @startColor, @endColor);
+	}
+	.horizontal-gradient (@startColor: #eee, @endColor: white) {
+	 	background-color: @startColor;
+		background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+		background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+		background-image: -moz-linear-gradient(left, @startColor, @endColor);
+		background-image: -ms-linear-gradient(left, @startColor, @endColor);
+		background-image: -o-linear-gradient(left, @startColor, @endColor);
+	}
+	.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+		-webkit-animation: @name @duration @delay @ease;
+		-moz-animation:    @name @duration @delay @ease;
+		-ms-animation:     @name @duration @delay @ease;
+	}
+	.transition (@transition) {
+		-webkit-transition: @transition;  
+		-moz-transition:    @transition;
+		-ms-transition:     @transition; 
+		-o-transition:      @transition;  
+	}
+	.transform(@string){
+		-webkit-transform: @string;
+		-moz-transform: 	 @string;
+		-ms-transform: 		 @string;
+		-o-transform: 		 @string;
+	}
+	.scale (@factor) {
+		-webkit-transform: scale(@factor);
+		-moz-transform: 	 scale(@factor);
+		-ms-transform: 		 scale(@factor);
+		-o-transform: 		 scale(@factor);
+	}
+	.rotate (@deg) {
+		-webkit-transform: rotate(@deg);
+		-moz-transform: 	 rotate(@deg);
+		-ms-transform: 		 rotate(@deg);
+		-o-transform: 		 rotate(@deg);
+	}
+	.skew (@deg, @deg2) {
+		-webkit-transform:       skew(@deg, @deg2);
+		-moz-transform: 	 skew(@deg, @deg2);
+		-ms-transform: 		 skew(@deg, @deg2);
+		-o-transform: 		 skew(@deg, @deg2);
+	}
+	.translate (@x, @y:0) {
+		-webkit-transform:       translate(@x, @y);
+		-moz-transform: 	 translate(@x, @y);
+		-ms-transform: 		 translate(@x, @y);
+		-o-transform: 		 translate(@x, @y);
+	}
+	.translate3d (@x, @y: 0, @z: 0) {
+		-webkit-transform:       translate3d(@x, @y, @z);
+		-moz-transform: 	 translate3d(@x, @y, @z);
+		-ms-transform: 		 translate3d(@x, @y, @z);
+		-o-transform: 		 translate3d(@x, @y, @z);
+	}
+	.perspective (@value: 1000) {
+		-webkit-perspective: 	@value;
+		-moz-perspective: 	@value;
+		-ms-perspective: 	@value;
+		perspective: 		@value;
+	}
+	.transform-origin (@x:center, @y:center) {
+		-webkit-transform-origin: @x @y;
+		-moz-transform-origin:    @x @y;
+		-ms-transform-origin:     @x @y;
+		-o-transform-origin:      @x @y;
+	}
+
+/* -- Universal Setting & Reset CSS
+--------------------------------------------------*/
+body {
+	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif,"Apple LiGothic","微軟正黑體","Microsoft JhengHei";
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	background-color: #6c9e01;
+}
+
+a,
+a:active,
+a:focus{
+	text-decoration: none;
+	cursor: pointer;
+}
+a:hover{
+	text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+::selection {
+	background:transparent;
+}
+
+::-moz-selection {
+	background:transparent;
+}
+
+/* -- Align & Float
+----------------------------------------*/
+.center{ text-align: center;}
+.left{ text-align: left;}
+.right{ text-align: right;}
+.f-left{ float: left; }
+.f-right{ float: right; }
+.clear-both{
+	width: 100%;
+	height: 1px;
+	overflow: hidden;
+	clear: both;
+}
+
+/* -- Layout 
+----------------------------------------*/
+.baseball-section{
+	background: url(../images/baseball-bg-repeat.jpg) repeat;
+	// background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	.site-title{
+		position: absolute;
+		width: 100%;
+		top: 0px;
+		left: 0px;
+		color: white;
+		padding-top: 30px;
+		text-align: center;
+		img{
+			width: 50%;
+		}
+	}
+	.court-wrapper{
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		position: relative;
+		.court-bg{
+			height: 75%;
+			margin-top: 20vh;
+		}
+		.player-block{
+			position: absolute;
+			width: 200px;
+			height: 64px;
+			text-align: left;
+			> div,
+			> img{
+				position: relative;
+				display: inline-block;
+				vertical-align: bottom;
+			}
+			.player-head{
+				width: 50px;
+				opacity: 0;
+				z-index: 2;
+			}
+			// .player-number{
+			// 	opacity: 0;
+			// 	display: inline-block;
+			// 	vertical-align: top;
+			// 	background-color: black;
+			// 	color: yellow;
+			// 	font-size: 18px;
+			// 	text-align: center;
+			// 	line-height: 24px;
+			// 	border-top-left-radius:2px;
+			// 	border-top-right-radius:2px;
+			// 	width: 24px;
+			// 	height: 24px;
+			// 	margin-left: -4px;
+			// }
+			.player-name{
+				opacity: 0;
+				color: black;
+				background-color: white;
+				margin-left: -50px;
+				z-index: 1;
+				// position: absolute;
+				// top: 60px;
+				// left: 52px;
+				padding: 3px 4px 3px 20px;
+				line-height: 1;
+				border: black 2px solid;
+				width: 175px;
+				text-align: left;
+				border-radius: 2px;
+				font-size: 20px;
+				box-sizing:border-box;
+				margin-bottom: 5px;
+			}
+		}
+		.player-C,
+		.player-P,
+		.player-CF{
+			left: 50vw;
+			margin-left: -100px;
+		}
+		.player-LF,
+		.player-3B{
+			left: 42vw;
+			margin-left: -260px;
+		}
+		.player-RF,
+		.player-1B{
+			right: 43vw;
+			margin-right: -260px;
+		}
+		.player-LF,
+		.player-RF{
+			top: 22vh;
+		}
+		.player-CF{
+			top: 18vh;
+		}
+		.player-C{
+			bottom: 9vh;
+		}
+		.player-1B,
+		.player-3B,
+		.player-P{
+			top: 58vh;
+			margin-top: -32px;
+		}
+		.player-SS,
+		.player-2B{
+			top: 36vh;
+		}
+		.player-SS{
+			left: 42vw;
+			margin-left: -130px;
+		}
+		.player-2B{
+			right: 42vw;
+			margin-right: -130px;
+		}
+
+		.player-block.show{
+			.player-number{
+				opacity: 1;
+				.transition(all 0.3s);
+			}
+			.player-name{
+				opacity: 1;
+				margin-left: -30px;
+				.transition(all 0.3s);
+			}
+			.player-head{
+				opacity: 1;
+				.transition(all 0.3s);
+			}
+		}
+	}
+}
+
+/* -- Responsive
+--------------------------------------------------*/
+/* Portrait tablet to landscape and desktop */
+@media all and (max-width:980px){
+	.center-content{
+		width: 96%;
+		padding: 2%;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media all and (max-width:720px){
+}
+
+/* Landscape phones and down */
+@media all and (max-width:480px){
+}
+
+
+
